@@ -21,6 +21,10 @@ class PackageResolver {
   static void resolve(Project project, File sdk) {
     new PackageResolver(project, sdk, new AndroidCommand.Real(sdk, new System.Real())).resolve()
   }
+  
+  static void resolveEmulator(Project project, File sdk) {
+    new PackageResolver(project, sdk, new AndroidCommand.Real(sdk, new System.Real())).resolveEmulator()
+  }
 
   static boolean folderExists(File folder) {
     return folder.exists() && folder.list().length != 0
